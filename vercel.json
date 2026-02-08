@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        {
+            "source": "/chat",
+            "destination": "/server/server.js"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
+}

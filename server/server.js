@@ -41,6 +41,13 @@ app.post("/chat", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
-});
+
+// Export for Vercel
+export default app;
+
+// Only listen if not running in production (Vercel handles this automatically)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(5000, () => {
+    console.log("Server running on port 5000");
+  });
+}
